@@ -4,47 +4,53 @@ import java.util.Scanner;
 
 public class lineComp {
 
+	public static double Length_Of_Line1;
+	public static double Length_Of_Line2;
+
 	public static void lineComparision() {
+		System.out.println("Welcome To Line Comparison Program");
+		Scanner S = new Scanner(System.in);
 
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter the value of a1: ");
-		int a1 = sc.nextInt();
-		System.out.println("Enter the value of a2: ");
-		int a2 = sc.nextInt();
-		System.out.println("Enter the value of b1: ");
-		int b1 = sc.nextInt();
-		System.out.println("Enter the value of b2: ");
-		int b2 = sc.nextInt();
+		System.out.println("Enter x Co-ordinate Number of First Point");
+		int x1 = S.nextInt();
+		System.out.println("Enter Y Co-ordinate Number Of First Point");
+		int y1 = S.nextInt();
 
-		System.out.println("Enter the value of x1: ");
-		int x1 = sc.nextInt();
-		System.out.println("Enter the value of x2: ");
-		int x2 = sc.nextInt();
-		System.out.println("Enter the value of y1: ");
-		int y1 = sc.nextInt();
-		System.out.println("Enter the value of y2: ");
-		int y2 = sc.nextInt();
+		System.out.println("Enter X Co-ordinate Number Of Second Point");
+		int x2 = S.nextInt();
+		System.out.println("Enter Y Co-ordinate Number Of Second Point");
+		int y2 = S.nextInt();
 
-		double length1 = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
-		System.out.println("Length of the line1 is: " + length1);
+		System.out.println("Enter P Co-ordinate Number Of Third Point");
+		int p1 = S.nextInt();
+		System.out.println("Enter Q Co-ordinate Number Of Third Point");
+		int q1 = S.nextInt();
 
-		double length2 = Math.sqrt((a2 - a1) * (a2 - a1) + (b2 - b1) * (b2 - b1));
-		System.out.println("Length of the line2 is: " + length2);
+		System.out.println("Enter P Co-ordinate Number Of Forth Point");
+		int p2 = S.nextInt();
+		System.out.println("Enter Q Co-ordinate Number Of Forth Point");
+		int q2 = S.nextInt();
+		S.close();
+
+		Length_Of_Line1 = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+		Length_Of_Line2 = Math.sqrt((p2 - p1) * (p2 - p1) + (q2 - q1) * (q2 - q1));
+
+		System.out.printf("length of 1st end points are : %.2f %n", Length_Of_Line1);
+		System.out.printf("length of 2nd end points are : %.2f %n", Length_Of_Line2);
 	}
 
-	private static void checkingEqualsLine(double length2, double length1) {
-		int a = (int) length1;
-		int b = (int) length2;
-		if (a == b) {
-			System.out.println("Lines are equal");
-		} else {
-			System.out.println("Lines are not equal");
-		}
+	public static void compareLineLength() {
+		if (Length_Of_Line1 > Length_Of_Line2)
+			System.out.println("length of 1st end points are Greater Than length of 2st end points are ");
+		else if (Length_Of_Line1 < Length_Of_Line2)
+			System.out.println("length of 1st end points are Less Than length of 2st end points are ");
+		else
+			System.out.println("Both Line Are  Equal");
+
 	}
 
 	public static void main(String[] args) {
-
 		lineComparision();
-		checkingEqualsLine(0, 0);
+		compareLineLength();
 	}
 }
